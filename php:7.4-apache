@@ -1,0 +1,15 @@
+FROM php:7.4-apache-buster
+RUN apt-get update \
+    && apt-get install -y \
+    libcurl4-openssl-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    libc-client-dev \
+    libkrb5-dev \
+    zlib1g-dev \
+    libpng-dev \
+
+
+    && docker-php-ext-install -j$(nproc) xmlrpc bcmath calendar pdo_mysql pcntl xsl gd mysqli sockets\
+    && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
+    && docker-php-ext-install -j$(nproc) imap
