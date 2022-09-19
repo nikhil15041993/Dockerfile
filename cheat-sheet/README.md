@@ -10,3 +10,12 @@
 6. ``` docker run -v <host directory>:<container directory> ``` Assign volume
 7. ``` docker run -it --entrypoint bash <image> ``` Add entry pont
 8. 
+
+
+## Manage Container 
+
+1. ``` docker ps ``` List all running contaner
+2. ``` docker pa -a ``` Lista all containers
+3. ``` docker rm <container id/name> ``` Remove container
+4. ``` docker rm -f <container id/name> ``` Focefully removing. running containers
+5. ``` docker 
